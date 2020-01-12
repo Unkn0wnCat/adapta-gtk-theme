@@ -1,6 +1,6 @@
-# ADAPTA_COLOR_SCHEME ()
+# KDAPTA_COLOR_SCHEME ()
 # -----------------------------------------------------------
-AC_DEFUN([ADAPTA_COLOR_SCHEME], [
+AC_DEFUN([KDAPTA_COLOR_SCHEME], [
 
     selection_default="`grep 'Cyan500' ./gtk/sass/common/_colors.scss | \
                         cut -d' ' -f3`"

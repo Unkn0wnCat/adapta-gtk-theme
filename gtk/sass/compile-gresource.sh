@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# This file is part of adapta-gtk-theme
+# This file is part of kdapta-gtk-theme
 #
 # Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com>
 #
@@ -51,9 +51,9 @@ case "$1" in
         cd ../gtk-"$1" && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1" \
                                              ../gtk-"$1"/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'/gtk-contained.css");' \
+        echo '@import url("resource:///org/kdapta-project/gtk-'$1'/gtk-contained.css");' \
             > ../gtk-"$1"/gtk.css
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'/gtk-contained-dark.css");' \
+        echo '@import url("resource:///org/kdapta-project/gtk-'$1'/gtk-contained-dark.css");' \
             > ../gtk-"$1"/gtk-dark.css
 
         rm -f ../gtk-"$1"/"$xml"
@@ -64,9 +64,9 @@ case "$1" in
         cd ../gtk-"$1"-eta && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1"-eta \
                                              ../gtk-"$1"-eta/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-eta/gtk-contained.css");' \
+        echo '@import url("resource:///org/kdapta-project/gtk-'$1'-eta/gtk-contained.css");' \
             > ../gtk-"$1"-eta/gtk.css
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-eta/gtk-contained-dark.css");' \
+        echo '@import url("resource:///org/kdapta-project/gtk-'$1'-eta/gtk-contained-dark.css");' \
             > ../gtk-"$1"-eta/gtk-dark.css
 
         rm -f ../gtk-"$1"-eta/"$xml"
@@ -77,7 +77,7 @@ case "$1" in
         cd ../gtk-"$1"-nokto && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1"-nokto \
                                              ../gtk-"$1"-nokto/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-nokto/gtk-contained-dark.css");' \
+        echo '@import url("resource:///org/kdapta-project/gtk-'$1'-nokto/gtk-contained-dark.css");' \
             > ../gtk-"$1"-nokto/gtk.css
 
         rm -f ../gtk-"$1"-nokto/"$xml"
@@ -88,7 +88,7 @@ case "$1" in
         cd ../gtk-"$1"-nokto-eta && ln -sf ../asset/assets-gtk3 assets && cd ../sass
         $(command -v glib-compile-resources) --sourcedir=../gtk-"$1"-nokto-eta \
                                              ../gtk-"$1"-nokto-eta/"$xml"
-        echo '@import url("resource:///org/adapta-project/gtk-'$1'-nokto-eta/gtk-contained-dark.css");' \
+        echo '@import url("resource:///org/kdapta-project/gtk-'$1'-nokto-eta/gtk-contained-dark.css");' \
             > ../gtk-"$1"-nokto-eta/gtk.css
 
         rm -f ../gtk-"$1"-nokto-eta/"$xml"

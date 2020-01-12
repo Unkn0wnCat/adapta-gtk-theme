@@ -1,7 +1,7 @@
 themedir     = $(datadir)/themes
-adaptadir    = $(DESTDIR)$(themedir)/Kdapta
+kdaptadir    = $(DESTDIR)$(themedir)/Kdapta
 noktodir     = $(DESTDIR)$(themedir)/Kdapta-Nokto
-adaptaetadir = $(DESTDIR)$(themedir)/Kdapta-Eta
+kdaptaetadir = $(DESTDIR)$(themedir)/Kdapta-Eta
 noktoetadir  = $(DESTDIR)$(themedir)/Kdapta-Nokto-Eta
 
 metacitydir   = $(srcdir)/metacity-1
@@ -175,49 +175,49 @@ endif
 
 install-data-local:
 if ENABLE_FLASHBACK
-	$(MKDIR_P) $(adaptadir)/metacity-1
-	cp -Rv $(metacity_file) $(adaptadir)/metacity-1
-	cd $(adaptadir)
-	ln -sf ../Adapta/metacity-1 $(noktodir)/metacity-1
-	ln -sf ../Adapta/metacity-1 $(adaptaetadir)/metacity-1
-	ln -sf ../Adapta/metacity-1 $(noktoetadir)/metacity-1
+	$(MKDIR_P) $(kdaptadir)/metacity-1
+	cp -Rv $(metacity_file) $(kdaptadir)/metacity-1
+	cd $(kdaptadir)
+	ln -sf ../Kdapta/metacity-1 $(noktodir)/metacity-1
+	ln -sf ../Kdapta/metacity-1 $(kdaptaetadir)/metacity-1
+	ln -sf ../Kdapta/metacity-1 $(noktoetadir)/metacity-1
 endif
 
 if ENABLE_CINNAMON
 if !ENABLE_FLASHBACK
-	$(MKDIR_P) $(adaptadir)/metacity-1
-	cp -Rv $(metacity_file) $(adaptadir)/metacity-1
-	cd $(adaptadir)
-	ln -sf ../Adapta/metacity-1 $(noktodir)/metacity-1
-	ln -sf ../Adapta/metacity-1 $(adaptaetadir)/metacity-1
-	ln -sf ../Adapta/metacity-1 $(noktoetadir)/metacity-1
+	$(MKDIR_P) $(kdaptadir)/metacity-1
+	cp -Rv $(metacity_file) $(kdaptadir)/metacity-1
+	cd $(kdaptadir)
+	ln -sf ../Kdapta/metacity-1 $(noktodir)/metacity-1
+	ln -sf ../Kdapta/metacity-1 $(kdaptaetadir)/metacity-1
+	ln -sf ../Kdapta/metacity-1 $(noktoetadir)/metacity-1
 endif
 endif
 
 if ENABLE_MATE
 if !ENABLE_FLASHBACK
-	$(MKDIR_P) $(adaptadir)/metacity-1
-	cp -Rv $(metacity_file) $(adaptadir)/metacity-1
-	cd $(adaptadir)
-	ln -sf ../Adapta/metacity-1 $(noktodir)/metacity-1
-	ln -sf ../Adapta/metacity-1 $(adaptaetadir)/metacity-1
-	ln -sf ../Adapta/metacity-1 $(noktoetadir)/metacity-1
+	$(MKDIR_P) $(kdaptadir)/metacity-1
+	cp -Rv $(metacity_file) $(kdaptadir)/metacity-1
+	cd $(kdaptadir)
+	ln -sf ../Kdapta/metacity-1 $(noktodir)/metacity-1
+	ln -sf ../Kdapta/metacity-1 $(kdaptaetadir)/metacity-1
+	ln -sf ../Kdapta/metacity-1 $(noktoetadir)/metacity-1
 endif
 endif
 
 if ENABLE_XFCE
-	$(MKDIR_P) $(adaptadir)/xfwm4
-	cp -Rv $(xfwm_file) $(adaptadir)/xfwm4
-	cd $(adaptadir)
-	ln -sf ../Adapta/xfwm4 $(noktodir)/xfwm4
+	$(MKDIR_P) $(kdaptadir)/xfwm4
+	cp -Rv $(xfwm_file) $(kdaptadir)/xfwm4
+	cd $(kdaptadir)
+	ln -sf ../Kdapta/xfwm4 $(noktodir)/xfwm4
 endif
 
 if ENABLE_OPENBOX
-	$(MKDIR_P) $(adaptadir)/openbox-3
+	$(MKDIR_P) $(kdaptadir)/openbox-3
 	$(MKDIR_P) $(noktodir)/openbox-3
-	cp -Rv $(openbox_file) $(adaptadir)/openbox-3
-	cp -Rv $(openbox_rc_file) $(adaptadir)/openbox-3/themerc
-	cp -Rv $(openbox_compton_file) $(adaptadir)/openbox-3/
+	cp -Rv $(openbox_file) $(kdaptadir)/openbox-3
+	cp -Rv $(openbox_rc_file) $(kdaptadir)/openbox-3/themerc
+	cp -Rv $(openbox_compton_file) $(kdaptadir)/openbox-3/
 	cp -Rv $(openbox_file) $(noktodir)/openbox-3
 	cp -Rv $(openbox_rc_nokto_file) $(noktodir)/openbox-3/themerc
 endif
@@ -229,37 +229,37 @@ endif
 uninstall-local:
 if ENABLE_FLASHBACK
 	test -e $(noktodir)/metacity-1 && rm -rfv $(noktodir)/metacity-1
-	test -e $(adaptadir)/metacity-1 && rm -rfv $(adaptadir)/metacity-1
+	test -e $(kdaptadir)/metacity-1 && rm -rfv $(kdaptadir)/metacity-1
 	test -e $(noktoetadir)/metacity-1 && rm -rfv $(noktoetadir)/metacity-1
-	test -e $(adaptaetadir)/metacity-1 && rm -rfv $(adaptaetadir)/metacity-1
+	test -e $(kdaptaetadir)/metacity-1 && rm -rfv $(kdaptaetadir)/metacity-1
 endif
 
 if ENABLE_CINNAMON
 if !ENABLE_FLASHBACK
 	test -e $(noktodir)/metacity-1 && rm -rfv $(noktodir)/metacity-1
-	test -e $(adaptadir)/metacity-1 && rm -rfv $(adaptadir)/metacity-1
+	test -e $(kdaptadir)/metacity-1 && rm -rfv $(kdaptadir)/metacity-1
 	test -e $(noktoetadir)/metacity-1 && rm -rfv $(noktoetadir)/metacity-1
-	test -e $(adaptaetadir)/metacity-1 && rm -rfv $(adaptaetadir)/metacity-1
+	test -e $(kdaptaetadir)/metacity-1 && rm -rfv $(kdaptaetadir)/metacity-1
 endif
 endif
 
 if ENABLE_MATE
 if !ENABLE_FLASHBACK
 	test -e $(noktodir)/metacity-1 && rm -rfv $(noktodir)/metacity-1
-	test -e $(adaptadir)/metacity-1 && rm -rfv $(adaptadir)/metacity-1
+	test -e $(kdaptadir)/metacity-1 && rm -rfv $(kdaptadir)/metacity-1
 	test -e $(noktoetadir)/metacity-1 && rm -rfv $(noktoetadir)/metacity-1
-	test -e $(adaptaetadir)/metacity-1 && rm -rfv $(adaptaetadir)/metacity-1
+	test -e $(kdaptaetadir)/metacity-1 && rm -rfv $(kdaptaetadir)/metacity-1
 endif
 endif
 
 if ENABLE_XFCE
 	test -e $(noktodir)/xfwm4 && rm -rfv $(noktodir)/xfwm4
-	test -e $(adaptadir)/xfwm4 && rm -rfv $(adaptadir)/xfwm4
+	test -e $(kdaptadir)/xfwm4 && rm -rfv $(kdaptadir)/xfwm4
 endif
 
 if ENABLE_OPENBOX
 	test -e $(noktodir)/openbox-3 && rm -rfv $(noktodir)/openbox-3
-	test -e $(adaptadir)/openbox-3 && rm -rfv $(adaptadir)/openbox-3
+	test -e $(kdaptadir)/openbox-3 && rm -rfv $(kdaptadir)/openbox-3
 endif
 
 # ****************************

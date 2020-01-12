@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-# This file is part of adapta-gtk-theme
+# This file is part of kdapta-gtk-theme
 #
 # Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com>
 #

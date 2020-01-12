@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# This file is part of adapta-gtk-theme
+# This file is part of kdapta-gtk-theme
 #
 # Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com>
 #
@@ -53,20 +53,20 @@ else
     if [ $GIO_MINOR_VERSION -ge "53" ]; then
         $SASSC \
             gnome-shell/$GNOME_SCSS_VERSION/gdm3.scss \
-            ../gnome-shell/gdm3-Adapta.css
-        echo Wrote ../gnome-shell/gdm3-Adapta.css
+            ../gnome-shell/gdm3-Kdapta.css
+        echo Wrote ../gnome-shell/gdm3-Kdapta.css
         $SASSC \
             gnome-shell/$GNOME_SCSS_VERSION/gdm3-dark.scss \
-            ../gnome-shell-nokto/gdm3-Adapta-Nokto.css
-        echo Wrote ../gnome-shell-nokto/gdm3-Adapta-Nokto.css
+            ../gnome-shell-nokto/gdm3-Kdapta-Nokto.css
+        echo Wrote ../gnome-shell-nokto/gdm3-Kdapta-Nokto.css
         $SASSC \
             gnome-shell/$GNOME_SCSS_VERSION/gdm3-eta.scss \
-            ../gnome-shell-eta/gdm3-Adapta-Eta.css
-        echo Wrote ../gnome-shell-eta/gdm3-Adapta-Eta.css
+            ../gnome-shell-eta/gdm3-Kdapta-Eta.css
+        echo Wrote ../gnome-shell-eta/gdm3-Kdapta-Eta.css
         $SASSC \
             gnome-shell/$GNOME_SCSS_VERSION/gdm3-dark-eta.scss \
-            ../gnome-shell-nokto-eta/gdm3-Adapta-Nokto-Eta.css
-        echo Wrote ../gnome-shell-nokto-eta/gdm3-Adapta-Nokto-Eta.css
+            ../gnome-shell-nokto-eta/gdm3-Kdapta-Nokto-Eta.css
+        echo Wrote ../gnome-shell-nokto-eta/gdm3-Kdapta-Nokto-Eta.css
     fi
     $SASSC \
         gnome-shell/$GNOME_SCSS_VERSION/pad-osd.scss \

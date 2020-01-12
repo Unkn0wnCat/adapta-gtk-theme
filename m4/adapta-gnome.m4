@@ -1,6 +1,6 @@
-# ADAPTA_GNOME ()
+# KDAPTA_GNOME ()
 # -----------------------------------------------------------
-AC_DEFUN([ADAPTA_GNOME], [
+AC_DEFUN([KDAPTA_GNOME], [
 
     # check glib-2.0 version for determining GNOME env version
     GIO_VERSION=`$PKG_CONFIG --modversion glib-2.0`

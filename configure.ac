@@ -1,14 +1,14 @@
-m4_define([adapta_major_version], [3])
-m4_define([adapta_minor_version], [95])
-m4_define([adapta_micro_version], [0])
-m4_define([adapta_version], [adapta_major_version.adapta_minor_version.adapta_micro_version])
-m4_define([adapta_git_url], [https://github.com/adapta-project/adapta-gtk-theme])
+m4_define([kdapta_major_version], [3])
+m4_define([kdapta_minor_version], [95])
+m4_define([kdapta_micro_version], [0])
+m4_define([kdapta_version], [kdapta_major_version.kdapta_minor_version.kdapta_micro_version])
+m4_define([kdapta_git_url], [https://github.com/kdapta-project/kdapta-gtk-theme])
 
 AC_INIT(
-	[Adapta ],
-	[adapta_version],
-	[adapta_git_url],
-	[adapta-gtk-theme]
+	[Kdapta ],
+	[kdapta_version],
+	[kdapta_git_url],
+	[kdapta-gtk-theme]
 )
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([
@@ -23,18 +23,18 @@ AM_INIT_AUTOMAKE([
 AC_PREFIX_DEFAULT(/usr/local)
 AM_SILENT_RULES([yes])
 
-ADAPTA_OPTION([PARALLEL],     [parallel],     [parallel-build],      [disable])
-ADAPTA_OPTION([GTK_NEXT],     [gtk_next],     [Gtk-4.0],             [disable])
-ADAPTA_OPTION([GNOME],        [gnome],        [Gnome-Shell],         [enable])
-ADAPTA_OPTION([CINNAMON],     [cinnamon],     [Cinnamon],            [enable])
-ADAPTA_OPTION([FLASHBACK],    [flashback],    [Flashback],           [enable])
-ADAPTA_OPTION([XFCE],         [xfce],         [XFce],                [enable])
-ADAPTA_OPTION([MATE],         [mate],         [Mate],                [enable])
-ADAPTA_OPTION([OPENBOX],      [openbox],      [Openbox],             [enable])
-ADAPTA_OPTION([CHROME_LEGACY],[chrome_legacy],[Chrome(ium)-legacy],  [disable])
-ADAPTA_OPTION([PLANK],        [plank],        [Plank],               [disable])
-ADAPTA_OPTION([TELEGRAM],     [telegram],     [Telegram],            [disable])
-ADAPTA_OPTION([TWEETDECK],    [tweetdeck],    [Tweetdeck-Colordeck], [disable])
+KDAPTA_OPTION([PARALLEL],     [parallel],     [parallel-build],      [disable])
+KDAPTA_OPTION([GTK_NEXT],     [gtk_next],     [Gtk-4.0],             [disable])
+KDAPTA_OPTION([GNOME],        [gnome],        [Gnome-Shell],         [enable])
+KDAPTA_OPTION([CINNAMON],     [cinnamon],     [Cinnamon],            [enable])
+KDAPTA_OPTION([FLASHBACK],    [flashback],    [Flashback],           [enable])
+KDAPTA_OPTION([XFCE],         [xfce],         [XFce],                [enable])
+KDAPTA_OPTION([MATE],         [mate],         [Mate],                [enable])
+KDAPTA_OPTION([OPENBOX],      [openbox],      [Openbox],             [enable])
+KDAPTA_OPTION([CHROME_LEGACY],[chrome_legacy],[Chrome(ium)-legacy],  [disable])
+KDAPTA_OPTION([PLANK],        [plank],        [Plank],               [disable])
+KDAPTA_OPTION([TELEGRAM],     [telegram],     [Telegram],            [disable])
+KDAPTA_OPTION([TWEETDECK],    [tweetdeck],    [Tweetdeck-Colordeck], [disable])
 
 PKG_PROG_PKG_CONFIG
 AS_IF([test -z "$PKG_CONFIG"], [AC_MSG_ERROR(['pkg-config' not found.])])
@@ -65,11 +65,11 @@ if test x"$ENABLE_PARALLEL" = xyes; then
 fi
 
 if test x"$ENABLE_GNOME" = xyes; then
-	ADAPTA_GNOME
+	KDAPTA_GNOME
 fi
 AM_CONDITIONAL(GNOME_IS_326_OR_NEWER, [test x"$GNOME_SCSS_VERSION" = x3.26])
 
-ADAPTA_COLOR_SCHEME
+KDAPTA_COLOR_SCHEME
 
 AC_CONFIG_FILES([
 	Makefile \
@@ -80,15 +80,15 @@ AC_CONFIG_FILES([
 ])
 AC_OUTPUT
 AC_MSG_RESULT([
-        Adapta Gtk+ Theme $VERSION
+        Kdapta Gtk+ Theme $VERSION
         =================================================================
 
          prefix:                 ${prefix}
          datarootdir:            ${datarootdir}
-         target directories:     ${datarootdir}/themes/Adapta
-                                 ${datarootdir}/themes/Adapta-Nokto
-                                 ${datarootdir}/themes/Adapta-Eta
-                                 ${datarootdir}/themes/Adapta-Nokto-Eta
+         target directories:     ${datarootdir}/themes/Kdapta
+                                 ${datarootdir}/themes/Kdapta-Nokto
+                                 ${datarootdir}/themes/Kdapta-Eta
+                                 ${datarootdir}/themes/Kdapta-Nokto-Eta
 
          glib-compile-resources: $GLIB_COMPILE_RESOURCES
          inkscape:               $INKSCAPE

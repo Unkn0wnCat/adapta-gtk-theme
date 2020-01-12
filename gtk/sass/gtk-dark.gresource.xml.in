@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/adapta-project/gtk-@VERSION@">
+  <gresource prefix="/org/kdapta-project/gtk-@VERSION@">
     <file>assets/checkbox-active-selectionmode-dark@2.png</file>
     <file>assets/checkbox-active-selectionmode-dark.png</file>
     <file>assets/checkbox-checked-active-dark@2.png</file>

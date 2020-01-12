@@ -1,9 +1,9 @@
 ACLOCAL_AMFLAGS = -I m4
 
 themedir  = $(datadir)/themes
-adaptadir = $(DESTDIR)$(themedir)/Kdapta
+kdaptadir = $(DESTDIR)$(themedir)/Kdapta
 noktodir  = $(DESTDIR)$(themedir)/Kdapta-Nokto
-adaptaetadir = $(DESTDIR)$(themedir)/Kdapta-Eta
+kdaptaetadir = $(DESTDIR)$(themedir)/Kdapta-Eta
 noktoetadir  = $(DESTDIR)$(themedir)/Kdapta-Nokto-Eta
 
 SUBDIRS = \
@@ -18,10 +18,10 @@ EXTRA_DIST = \
 	README.md
 
 install-data-hook:
-	cp -Rv $(EXTRA_DIST) $(adaptadir)
+	cp -Rv $(EXTRA_DIST) $(kdaptadir)
 
 uninstall-hook:
 	test -e $(noktodir) && rm -rfv $(noktodir)
-	test -e $(adaptadir) && rm -rfv $(adaptadir)
+	test -e $(kdaptadir) && rm -rfv $(kdaptadir)
 	test -e $(noktetaodir) && rm -rfv $(noktoetadir)
-	test -e $(adaptaetadir) && rm -rfv $(adaptaetadir)
+	test -e $(kdaptaetadir) && rm -rfv $(kdaptaetadir)

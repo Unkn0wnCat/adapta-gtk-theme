@@ -1,13 +1,13 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Adapta
+Name=Kdapta
 Comment=An adaptive Gtk+ theme based on Material Design
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 Type=X-GNOME-Metatheme
-GtkTheme=Adapta
-MetacityTheme=Adapta
+GtkTheme=Kdapta
+MetacityTheme=Kdapta
 IconTheme=Adwaita
 CursorTheme=Adwaita
 CursorSize=24

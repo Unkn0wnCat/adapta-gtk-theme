@@ -1,7 +1,7 @@
 themedir     = $(datadir)/themes
-adaptadir    = $(DESTDIR)$(themedir)/Kdapta
+kdaptadir    = $(DESTDIR)$(themedir)/Kdapta
 noktodir     = $(DESTDIR)$(themedir)/Kdapta-Nokto
-adaptaetadir = $(DESTDIR)$(themedir)/Kdapta-Eta
+kdaptaetadir = $(DESTDIR)$(themedir)/Kdapta-Eta
 noktoetadir  = $(DESTDIR)$(themedir)/Kdapta-Nokto-Eta
 
 shelldir   = $(srcdir)/gnome-shell
@@ -24,7 +24,7 @@ shell_file = \
 	$(shelldir)/toggle-on.svg
 if ENABLE_GNOME
 if GNOME_IS_326_OR_NEWER
-shell_gdm3_file = $(shelldir)/gdm3-Adapta.css
+shell_gdm3_file = $(shelldir)/gdm3-Kdapta.css
 endif
 endif
 shell_pad_osd_file = \
@@ -97,7 +97,7 @@ shell_nokto_file = \
 	$(shellnoktodir)/toggle-on.svg
 if ENABLE_GNOME
 if GNOME_IS_326_OR_NEWER
-shell_nokto_gdm3_file = $(shellnoktodir)/gdm3-Adapta-Nokto.css
+shell_nokto_gdm3_file = $(shellnoktodir)/gdm3-Kdapta-Nokto.css
 endif
 endif
 shell_nokto_asset_file = \
@@ -141,7 +141,7 @@ shelleta_file = \
 	$(shelletadir)/toggle-on.svg
 if ENABLE_GNOME
 if GNOME_IS_326_OR_NEWER
-shell_eta_gdm3_file = $(shelletadir)/gdm3-Adapta-Eta.css
+shell_eta_gdm3_file = $(shelletadir)/gdm3-Kdapta-Eta.css
 endif
 endif
 shelleta_asset_file = \
@@ -185,7 +185,7 @@ shell_nokto_eta_file = \
 	$(shellnoktoetadir)/toggle-on.svg
 if ENABLE_GNOME
 if GNOME_IS_326_OR_NEWER
-shell_nokto_eta_gdm3_file = $(shellnoktoetadir)/gdm3-Adapta-Nokto-Eta.css
+shell_nokto_eta_gdm3_file = $(shellnoktoetadir)/gdm3-Kdapta-Nokto-Eta.css
 endif
 endif
 shell_nokto_eta_asset_file = \
@@ -327,13 +327,13 @@ if ENABLE_GNOME
 if GNOME_IS_326_OR_NEWER
 	cd $(srcdir)/sass && \
 		$(SASSC) $(sassc_option) \
-		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3.scss ../gnome-shell/gdm3-Adapta.css && \
+		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3.scss ../gnome-shell/gdm3-Kdapta.css && \
 		$(SASSC) $(sassc_option) \
-		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3-dark.scss ../gnome-shell-nokto/gdm3-Adapta-Nokto.css && \
+		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3-dark.scss ../gnome-shell-nokto/gdm3-Kdapta-Nokto.css && \
 		$(SASSC) $(sassc_option) \
-		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3-eta.scss ../gnome-shell-eta/gdm3-Adapta-Eta.css && \
+		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3-eta.scss ../gnome-shell-eta/gdm3-Kdapta-Eta.css && \
 		$(SASSC) $(sassc_option) \
-		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3-dark-eta.scss ../gnome-shell-nokto-eta/gdm3-Adapta-Nokto-Eta.css
+		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3-dark-eta.scss ../gnome-shell-nokto-eta/gdm3-Kdapta-Nokto-Eta.css
 endif
 	cd $(srcdir)/sass && \
 		$(SASSC) $(sassc_option) \
@@ -398,23 +398,23 @@ endif
 
 install-data-local:
 if ENABLE_GNOME
-	$(MKDIR_P) $(adaptadir)/gnome-shell
-	$(MKDIR_P) $(adaptadir)/gnome-shell/assets
-	$(MKDIR_P) $(adaptadir)/gnome-shell/extensions
-	$(MKDIR_P) $(adaptadir)/gnome-shell/extensions/window-list
-	$(MKDIR_P) $(adaptadir)/gnome-shell/extensions/workspaces-to-dock
-	$(MKDIR_P) $(adaptadir)/gnome-shell/extensions/workspaces-to-dock/assets
-	cp -Rv $(shell_file) $(adaptadir)/gnome-shell
-	cp -Rv $(shell_pad_osd_file) $(adaptadir)/gnome-shell
-	cp -Rv $(shell_asset_file) $(adaptadir)/gnome-shell/assets
+	$(MKDIR_P) $(kdaptadir)/gnome-shell
+	$(MKDIR_P) $(kdaptadir)/gnome-shell/assets
+	$(MKDIR_P) $(kdaptadir)/gnome-shell/extensions
+	$(MKDIR_P) $(kdaptadir)/gnome-shell/extensions/window-list
+	$(MKDIR_P) $(kdaptadir)/gnome-shell/extensions/workspaces-to-dock
+	$(MKDIR_P) $(kdaptadir)/gnome-shell/extensions/workspaces-to-dock/assets
+	cp -Rv $(shell_file) $(kdaptadir)/gnome-shell
+	cp -Rv $(shell_pad_osd_file) $(kdaptadir)/gnome-shell
+	cp -Rv $(shell_asset_file) $(kdaptadir)/gnome-shell/assets
 	cp -Rv $(shell_extension_windowlist_file) \
-		$(adaptadir)/gnome-shell/extensions/window-list
+		$(kdaptadir)/gnome-shell/extensions/window-list
 	cp -Rv $(shell_extension_workspace_file) \
-		$(adaptadir)/gnome-shell/extensions/workspaces-to-dock
+		$(kdaptadir)/gnome-shell/extensions/workspaces-to-dock
 	cp -Rv $(shell_extension_workspace_asset_file) \
-		$(adaptadir)/gnome-shell/extensions/workspaces-to-dock/assets
+		$(kdaptadir)/gnome-shell/extensions/workspaces-to-dock/assets
 if GNOME_IS_326_OR_NEWER
-	cp -Rv $(shell_gdm3_file) $(adaptadir)/gnome-shell
+	cp -Rv $(shell_gdm3_file) $(kdaptadir)/gnome-shell
 endif
 
 	$(MKDIR_P) $(noktodir)/gnome-shell
@@ -436,23 +436,23 @@ if GNOME_IS_326_OR_NEWER
 	cp -Rv $(shell_nokto_gdm3_file) $(noktodir)/gnome-shell
 endif
 
-	$(MKDIR_P) $(adaptaetadir)/gnome-shell
-	$(MKDIR_P) $(adaptaetadir)/gnome-shell/assets
-	$(MKDIR_P) $(adaptaetadir)/gnome-shell/extensions
-	$(MKDIR_P) $(adaptaetadir)/gnome-shell/extensions/window-list
-	$(MKDIR_P) $(adaptaetadir)/gnome-shell/extensions/workspaces-to-dock
-	$(MKDIR_P) $(adaptaetadir)/gnome-shell/extensions/workspaces-to-dock/assets
-	cp -Rv $(shelleta_file) $(adaptaetadir)/gnome-shell
-	cp -Rv $(shell_pad_osd_file) $(adaptaetadir)/gnome-shell
-	cp -Rv $(shelleta_asset_file) $(adaptaetadir)/gnome-shell/assets
+	$(MKDIR_P) $(kdaptaetadir)/gnome-shell
+	$(MKDIR_P) $(kdaptaetadir)/gnome-shell/assets
+	$(MKDIR_P) $(kdaptaetadir)/gnome-shell/extensions
+	$(MKDIR_P) $(kdaptaetadir)/gnome-shell/extensions/window-list
+	$(MKDIR_P) $(kdaptaetadir)/gnome-shell/extensions/workspaces-to-dock
+	$(MKDIR_P) $(kdaptaetadir)/gnome-shell/extensions/workspaces-to-dock/assets
+	cp -Rv $(shelleta_file) $(kdaptaetadir)/gnome-shell
+	cp -Rv $(shell_pad_osd_file) $(kdaptaetadir)/gnome-shell
+	cp -Rv $(shelleta_asset_file) $(kdaptaetadir)/gnome-shell/assets
 	cp -Rv $(shell_extension_windowlist_file) \
-		$(adaptaetadir)/gnome-shell/extensions/window-list
+		$(kdaptaetadir)/gnome-shell/extensions/window-list
 	cp -Rv $(shell_extension_workspace_file) \
-		$(adaptaetadir)/gnome-shell/extensions/workspaces-to-dock
+		$(kdaptaetadir)/gnome-shell/extensions/workspaces-to-dock
 	cp -Rv $(shell_extension_workspace_asset_file) \
-		$(adaptaetadir)/gnome-shell/extensions/workspaces-to-dock/assets
+		$(kdaptaetadir)/gnome-shell/extensions/workspaces-to-dock/assets
 if GNOME_IS_326_OR_NEWER
-	cp -Rv $(shell_eta_gdm3_file) $(adaptaetadir)/gnome-shell
+	cp -Rv $(shell_eta_gdm3_file) $(kdaptaetadir)/gnome-shell
 endif
 
 	$(MKDIR_P) $(noktoetadir)/gnome-shell
@@ -476,27 +476,27 @@ endif
 endif
 
 if ENABLE_CINNAMON
-	$(MKDIR_P) $(adaptadir)/cinnamon
-	$(MKDIR_P) $(adaptadir)/cinnamon/assets
-	$(MKDIR_P) $(adaptadir)/cinnamon/assets/checkbox
-	$(MKDIR_P) $(adaptadir)/cinnamon/assets/menu
-	$(MKDIR_P) $(adaptadir)/cinnamon/assets/misc
-	$(MKDIR_P) $(adaptadir)/cinnamon/assets/panel
-	$(MKDIR_P) $(adaptadir)/cinnamon/assets/switch
-	cp -Rv $(cinnamon_file) $(adaptadir)/cinnamon
+	$(MKDIR_P) $(kdaptadir)/cinnamon
+	$(MKDIR_P) $(kdaptadir)/cinnamon/assets
+	$(MKDIR_P) $(kdaptadir)/cinnamon/assets/checkbox
+	$(MKDIR_P) $(kdaptadir)/cinnamon/assets/menu
+	$(MKDIR_P) $(kdaptadir)/cinnamon/assets/misc
+	$(MKDIR_P) $(kdaptadir)/cinnamon/assets/panel
+	$(MKDIR_P) $(kdaptadir)/cinnamon/assets/switch
+	cp -Rv $(cinnamon_file) $(kdaptadir)/cinnamon
 	cp -Rv $(cinnamon_asset_checkbox_file) \
-		$(adaptadir)/cinnamon/assets/checkbox
+		$(kdaptadir)/cinnamon/assets/checkbox
 	cp -Rv $(cinnamon_asset_menu_file) \
-		$(adaptadir)/cinnamon/assets/menu
+		$(kdaptadir)/cinnamon/assets/menu
 	cp -Rv $(cinnamon_asset_misc_file) \
-		$(adaptadir)/cinnamon/assets/misc
+		$(kdaptadir)/cinnamon/assets/misc
 	cp -Rv $(cinnamon_asset_panel_file) \
-		$(adaptadir)/cinnamon/assets/panel
+		$(kdaptadir)/cinnamon/assets/panel
 	cp -Rv $(cinnamon_asset_switch_file) \
-		$(adaptadir)/cinnamon/assets/switch
+		$(kdaptadir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_asset_thumb_file) \
-		$(adaptadir)/cinnamon/assets
-	cd $(adaptadir)/cinnamon && \
+		$(kdaptadir)/cinnamon/assets
+	cd $(kdaptadir)/cinnamon && \
 		ln -sf ./assets/thumbnail.png thumbnail.png
 
 	$(MKDIR_P) $(noktodir)/cinnamon
@@ -524,9 +524,9 @@ if ENABLE_CINNAMON
 endif
 
 if ENABLE_XFCE
-	$(MKDIR_P) $(adaptadir)/xfce-notify-4.0
-	cp -Rv $(xfce_image_file) $(adaptadir)/xfce-notify-4.0
-	cp -Rv $(xfce_rc_file) $(adaptadir)/xfce-notify-4.0
+	$(MKDIR_P) $(kdaptadir)/xfce-notify-4.0
+	cp -Rv $(xfce_image_file) $(kdaptadir)/xfce-notify-4.0
+	cp -Rv $(xfce_rc_file) $(kdaptadir)/xfce-notify-4.0
 endif
 
 # *******************
@@ -536,19 +536,19 @@ endif
 uninstall-local:
 if ENABLE_GNOME
 	test -e $(noktodir)/gnome-shell && rm -rfv $(noktodir)/gnome-shell
-	test -e $(adaptadir)/gnome-shell && rm -rfv $(adaptadir)/gnome-shell
+	test -e $(kdaptadir)/gnome-shell && rm -rfv $(kdaptadir)/gnome-shell
 	test -e $(noktoetadir)/gnome-shell && rm -rfv $(noktoetadir)/gnome-shell
-	test -e $(adaptaetadir)/gnome-shell && rm -rfv $(adaptaetadir)/gnome-shell
+	test -e $(kdaptaetadir)/gnome-shell && rm -rfv $(kdaptaetadir)/gnome-shell
 endif
 
 if ENABLE_CINNAMON
 	test -e $(noktodir)/cinnamon && rm -rfv $(noktodir)/cinnamon
-	test -e $(adaptadir)/cinnamon && rm -rfv $(adaptadir)/cinnamon
+	test -e $(kdaptadir)/cinnamon && rm -rfv $(kdaptadir)/cinnamon
 endif
 
 if ENABLE_XFCE
-	test -e $(adaptadir)/xfce-notify-4.0 && \
-		rm -rfv $(adaptadir)/xfce-notify-4.0
+	test -e $(kdaptadir)/xfce-notify-4.0 && \
+		rm -rfv $(kdaptadir)/xfce-notify-4.0
 endif
 
 # ****************************
@@ -607,10 +607,10 @@ CLEANFILES += \
 	$(srcdir)/asset/assets-gnome-shell/workspaces-to-dock/*.svg
 if GNOME_IS_326_OR_NEWER
 CLEANFILES += \
-	$(srcdir)/gnome-shell/gdm3-Adapta.css \
-	$(srcdir)/gnome-shell-nokto/gdm3-Adapta-Nokto.css \
-	$(srcdir)/gnome-shell-eta/gdm3-Adapta-Eta.css \
-	$(srcdir)/gnome-shell-nokto-eta/gdm3-Adapta-Nokto-Eta.css
+	$(srcdir)/gnome-shell/gdm3-Kdapta.css \
+	$(srcdir)/gnome-shell-nokto/gdm3-Kdapta-Nokto.css \
+	$(srcdir)/gnome-shell-eta/gdm3-Kdapta-Eta.css \
+	$(srcdir)/gnome-shell-nokto-eta/gdm3-Kdapta-Nokto-Eta.css
 endif
 endif
 

@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-# This file is part of adapta-gtk-theme
+# This file is part of kdapta-gtk-theme
 #
 # Copyright (C) 2016-2018 Tista <tista.gma500@gmail.com>
 #
@@ -10,8 +10,8 @@
 # (at your option) any later version.
 #
 
-SRC_LIGHT_FILE="./light/ColorDeck-adapta.cdk"
-SRC_DARK_FILE="./dark/ColorDeck-adapta-nokto.cdk"
+SRC_LIGHT_FILE="./light/ColorDeck-kdapta.cdk"
+SRC_DARK_FILE="./dark/ColorDeck-kdapta-nokto.cdk"
 COL_FILE="../../gtk/sass/common/_colors.scss"
 KEY_FILE="../../gtk/sass/common/_key_colors.scss"
 

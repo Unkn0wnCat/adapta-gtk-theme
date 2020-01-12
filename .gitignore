@@ -37,5 +37,5 @@ Makefile
 Makefile.in
 missing
 inkscape.log
-ColorDeck-adapta.cdk
-ColorDeck-adapta-nokto.cdk
+ColorDeck-kdapta.cdk
+ColorDeck-kdapta-nokto.cdk

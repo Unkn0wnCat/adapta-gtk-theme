@@ -7,7 +7,7 @@
  * Display server protocol - X11 or Wayland?
  ```
 
-**Adapta version (if you knew)**
+**Kdapta version (if you knew)**
 
 
 
