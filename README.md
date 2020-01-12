@@ -1,4 +1,4 @@
- Kdapta-gtk-theme
+ Kdapta-gtk-theme (forked from [Adapta](https://github.com/adapta-project/adapta-gtk-theme))
 ======
 
 A custom fork of the [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme).
@@ -174,6 +174,7 @@ Public License
 Special Thanks to
 --------------
  [Adapta](https://github.com/adapta-project/adapta-gtk-theme), the theme this theme is based on. 
+ 
  Nana-4, the developer of Materia (formerly Flat-Plat).
 
  And all supporters, thank you.
