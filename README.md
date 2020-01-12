@@ -1,87 +1,13 @@
-<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/logo_thumb.png" alt="Logo" align="left" /> Kdapta-gtk-theme
+ Kdapta-gtk-theme
 ======
 
-An adaptive Gtk+ theme based on Material Design Guidelines.
+A custom fork of the [Adapta theme](https://github.com/adapta-project/adapta-gtk-theme).
 
-
-04 Oct 2018
------------
- * Re-lock issues until we hunt a new maintainer (owner) of this project.
-
-02 Oct 2018
------------
- * Reverted all changes to 3.94.0.x.
+I like my themes dark. Very dark. This is why I forked Adapta to create my custom version with a much darker dark version.
 
 Before using Kdapta
 -------------------
-
-#### Typography
-
-Kdapta strongly depends on Material Design resources, especially its **fonts**.
-
- 1. [**Roboto**](https://fonts.google.com/specimen/Roboto)
-   - Very famous as the default truetype font in Android (English ver.).
-   - Multilingual support is not good.
-   - Weight used in Kdapta: 300, 400, 500, 700
-
- 2. [**Noto Sans**](https://fonts.google.com/specimen/Noto+Sans)
-   - Noto (NO TOfu) sans-serif truetype/opentype font covers a lot of languages.
-   - Developed by Monotype and Adobe.
-   - Weight used in Kdapta: 400, (500), 700
-
-| |Primary|Secondary|Fallback|
-|:-----:|:-----:|:-----:|:-----:|
-|Gnome-Shell >= 3.26|**Roboto**|**NotoSans**|Sans-serif|
-|Gnome-Shell =< 3.24|**NotoSans**||Sans-serif|
-|Cinnamon           |**Roboto**||Sans-serif|
-
-> **Note:**
->
-> * Roboto is very nice with Kdapta, but in some locales, it causes Tofu.
-> * NotoSans may work well in various locales, but NotoSans lacks 500 (Medium) weight. So elements defined with 500 will be drawn with 400 automatically.
-> * NotoSans CJK supports 500 weight.
-> * NotoSans is used as the 'password chars **U+25CF**' only in Gnome-Shell >= 3.26.
-
-Kdapta is designed with nominal **13px (or 14px)** Roboto font.
-In Gnome, "window-scaling-factor = 1.0" means `-gtk-dpi = 96`, it also means:
-  ```
-  13 [px] x 72 [pt/inch] / 96 [px/inch] = 9.75 [pt]
-  14 [px] x 72 [pt/inch] / 96 [px/inch] = 10.5 [pt]
-  ```
-That's the reason why `13.33px = 10pt` is used for rem/px conversion in Gtk+ 3.2x theming (In Gtk+ 3.18.x theming, em unit is directly used).
-
-> **Note:**
->
-> NotoSans CJK (ChineseJapaneseKorean) opentype fonts are actually **0.1em taller than Roboto fonts**, so if 10pt Roboto was suitable on your LCDs, set 9pt for NotoSans CJK families.
-
-**Verify the fonts are rendered correctly via font-viewer tools like Gnome-Font-Viewer.**
-
-Variant Matrix
---------------
-
-| |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/sunlight.png" align="left"/> Kdapta|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/moon.png" align="left"/> Kdapta-Nokto|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/sunlight-eta.png" align="left"/> Kdapta-Eta|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/moon-eta.png" align="left"/> Kdapta-Nokto-Eta|
-|:-----:|:-----:|:-----:|:-----:|:-----:|
-|Gtk+ 2.24.x |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|
-|Gtk+ 3.20.x |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|
-|Gtk+ 3.22.x |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|
-|Gtk+ 3.24.x |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|
-|Mutter      |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|
-|Metacity    |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|
-|Muffin      |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|
-|XFwm4       |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|
-|Marco       |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|
-|Openbox-3   |<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-on.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|<img src="https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/check-off.png" align="center" />|
-
-> **Note:**
->
->   * **Nokto** is a dark variant.
->   * **Eta** is a tiny Gtk+ 2.x/3.2x Gtk+ widget variant for saving space.
->   * I suggest you use the Eta variants if your LCD resolution is lower than FHD (1080p). Eta draws widgets around -20% to -30% spacing.
->   * Metacity theming supports Eta variants (>= 3.2x).
-
-Elements
---------
-![Materials](https://github.com/kdapta-project/kdapta-github-resources/blob/master/images/Materials.png)
+*Please follow the instructions from the [official Adapta repository](https://github.com/adapta-project/adapta-gtk-theme).*
 
 Required Components
 -------------------
@@ -115,23 +41,6 @@ Unsupported Gtk+ Based Desktop(s)
  > **Note:**
  >
  >   * Kdapta does NOT support elementaryOS.
-
-Installation from Package(s)
-----------------------------
- Package(s) can be found in the official main repositories of these distributions:
-
- * **Arch (community)**
-
- * **Fedora**
-
- * **openSUSE (Tumbleweed)**
-
- * **Solus**
-
- Personal repository:
-
- * PPA: [**Stable-channel**](https://launchpad.net/~tista/+archive/ubuntu/kdapta)
-        and [**Dev-channel**](https://launchpad.net/~tista/+archive/ubuntu/kdapta-nightly)
 
 Installation from Git Source
 ----------------------------
@@ -251,124 +160,6 @@ Installation from Git Source
  >     and `make clean` cleans up all generated files from source directories.
  >   * This feature unfortunately is not supported in `Openbox-3` and `Telegram 1.0` theming.
 
-GtkSourceView/Gedit Color Scheme Support
-----------------------------------------
- A theme file `kdapta.xml` is installed by default into `Kdapta(-Nokto)/gedit` directory.
- See details in [**README.md**](/extra/gedit/README.md).
-
- > **Note:**
- >
- >   * The color-scheme can be used in Gnome-Builder, Gnome-Sushi, Meld and Gedit if installed to 
- >     `~/.local/share/gtksourceview-3.0/styles` or `~/.local/share/gtksourceview-4/styles` directory.
- >   * Currently only dark-variant is supported.
-
-Visual Studio Code (VS Code) Theme Support
-------------------------------------------
- 1. Linux-themes (Author: SolarLiner): [**Visual Studio Marketplace**](https://marketplace.visualstudio.com/items?itemName=SolarLiner.linux-themes)
-
- 2. Vscode-theme-adapted (Author: About-Code): [**Visual Studio Marketplace**](https://marketplace.visualstudio.com/items?itemName=about-code.vscode-theme-adapted)
-
-Extra Browser Support
----------------------
- To try our color samples for FirefoxColor test pilot, check these URLs:
-
-  1. [**Kdapta**](https://color.firefox.com/?theme=XQAAAALUAAAAAAAAAABBKYhm849SCiazH1KEGccwS-xNVAWBvoBvsLDMFdiXwrZEjOV1NwO6XqPerXD8qZXG0Ve0ysSRDO_Fqq_1SFIUTSKR-LFqpoxVvvpw1Iq_PQcwWXZZeVXaSfmGGjCCdDkcOR3IcXyEWy-CbpLupG_UOE7d7U-IqXDfj3RCFFTYAW-cbj4Hku3mPIskyg-xRys_ul6HSl3J_IaFQA)
-
-  2. [**Kdapta-Nokto**](https://color.firefox.com/?theme=XQAAAALUAAAAAAAAAABBKYhm849SCiazH1KEGccwS-xNVAVNrWV6_89xtxNWy3sM0X99YG7itotZ8sB9kkK0owJCyKXJNAryj9IJU_wtu72r-X3skC4prCeW-fnJweq-4xu9tLmeXj8UkSdZGnzwrWVCNr3bToa6Zufrkj2b7e0PqstuOnN1gdAzjKSHwEJvdQThz-ruhge78cW2PaG0mCwQPvE72cX8OQiA)
-
-
- To try legacy Chrome(ium) specific theming (`< 59.0.30xx`), pass this option:
-
- ```
- --enable-chrome-legacy     enable legacy Chrome(ium) support (type: bool)
- ```
-
- The compressed `crx` files will be installed into `Kdapta/chrome` and `Kdapta-Nokto/chrome`.
-
- > **Note:**
- >
- >   * Chrome(ium) 59.0.30xx or newer, theming is pulled from Gtk+ 3.x directly.
- >     So `Settings > Appearance > Themes` should be `GTK+`.
- >
- >   * Vivaldi can make custom themes via settings like these:
- >     ```
- >     Background: #FAFBFC (#0c1012)
- >     Foreground: #0c1012 (#CFD8DC)
- >     Highlight:  #00BCD4
- >     Accent:     #07090a
- >     Accent Color from Active Page: [ ]
- >     Apply Accent Color to Window:  [*]
- >     Transparent Tabs:              [*]
- >     Corner Rounding:               2px
- >     ```
-
-Extra Dock Support
-------------------
- To try "Plank" theming, pass this option:
-
- ```
- --enable-plank         enable Plank support (type: bool)
- ```
-
- Then select `Gtk+` via `plank --preferences`.
-
- > **Note:**
- >
- >   * Both Kdapta and Kdapta-Nokto shares the same theming.
- >   * Don't expect too much. Plank is NOT a themeable widget for me!
-
-Extra Compositor Support
-------------------------
- Compton is the famous stand-alone compositor that works well with the Openbox window-manager. The installer installs recommended configuration file `compton.conf` into `Kdapta/openbox-3` directory if Openbox support is enabled.
-
- Next, copy that file into `~/.config/` and restart compton to read the settings.  That compositor still has some limitations in its features for Kdapta, however.
-
-Extra Telegram Support
-----------------------
- To try "Telegram 1.0" theming, pass this option:
-
- ```
- --enable-telegram      enable Telegram 1.0 support (type: bool)
- ```
-
- The installer installs compressed `tdesktop-theme` files into `Kdapta/telegram` and `Kdapta-Nokto/telegram` directories if Telegram support is enabled.
- Then open the file via Telegram > Main Menu > Settings > Chat background > Choose from file.
-
- > **Note:**
- >
- >   * The `kdapta.tdesktop-theme` is for light-variant, and `kdapta-nokto.tdesktop-theme` is for dark-variant.
- >   * Bundled noise-texture images are for *tiled* mode.
- >   * Telegram support is a W.I.P currently.
-
-Extra Tweetdeck Support
------------------------
- To try "Colordeck for Tweetdeck" extension theming, pass this option:
-
- ```
- --enable-tweetdeck      enable Tweetdeck-colordeck support (type: bool)
- ```
-
- The installer installs `cdk` files into `Kdapta*/tweetdeck` directories if Tweetdeck support is enabled.
- Then open the file via Colordeck -> import > "Colors" -> Choose File.
-
- > **Note:**
- >
- >   * [**Chrome Web Store**](https://chrome.google.com/webstore/detail/colordeck-for-tweetdeck/jgoilgghdiafcdpgaddhfnlnhjhiejjl)
- >   * [**Firefox Add-ons**](https://addons.mozilla.org/en-US/firefox/addon/colordeck/)
- >   * Light and dark variants are supported.
- >   * Currently those files support "Colors" only, so enabling "Colors" checkbox is enough.
-
-Other Projects
-------
-This is a list of community projects, related to Kdapta:
- - [**Kdapta KDE**](https://github.com/PapirusDevelopmentTeam/kdapta-kde) - Port of this theme to KDE Plasma 5.
- - [**Discord-Kdapta-Nokto**](https://github.com/Scrumplex/Discord-Adpata-Nokto) - Kdapta-oriented theme for Discord
-
-Work in Progress
-----------------
-
-TODO
-----
 
 Public License
 --------------
@@ -380,11 +171,9 @@ Public License
  > And an icon-theme in Cinnamon thumbnails:
  > [**Paper Icons**](http://snwh.org/paper/icons) by Sam Hewitt is licensed under CC-SA-4.0.
 
-Donations
----------
-
 Special Thanks to
 --------------
+ [Adapta](https://github.com/adapta-project/adapta-gtk-theme), the theme this theme is based on. 
  Nana-4, the developer of Materia (formerly Flat-Plat).
 
  And all supporters, thank you.
