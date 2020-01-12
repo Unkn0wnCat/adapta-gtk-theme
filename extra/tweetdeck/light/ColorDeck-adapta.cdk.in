@@ -1,22 +1,22 @@
 {
   "data":{
     "colors":{
-      "c_principal":"#263238",
+      "c_principal":"#0c1012",
       "c_background":"#FAFBFC",
       "c_ct_background":"#E5E9EC",
       "c_ct_background2":"#E5E9EC",
-      "c_ct_text":"#263238",
+      "c_ct_text":"#0c1012",
       "c_cw_background":"#009688",
       "c_cw_text":"#FFFFFF",
       "c_links":"#03A9F4",
-      "c_ml_background":"#243035",
+      "c_ml_background":"#07090a",
       "c_ml_icons":"#B9C2C6",
       "c_ntfBubble_color":"#4DB6AC",
       "c_ntf_background":"#009688",
       "c_ntf_text":"#FFFFFF",
       "c_scrollbar":"#BABFC1",
       "c_tw_background":"#FFFFFF",
-      "c_tw_text":"#263238",
+      "c_tw_text":"#0c1012",
       "ct_backgroundType":"solid",
       "mode":"advanced"
     }
